@@ -4,13 +4,18 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.Properties;
 
+
 /**
  * Hello world!
  *
  */
 
+@Configurable(config = "Advanced Java")
 class MyClass {
 	int score = 0;
+
+	@Field(description = "Name")
+	static String name  = "Ayush Jaipuriar";
 
 	private void print() {
 		System.out.println("printed something from private method : print");
@@ -60,6 +65,17 @@ public class App {
 			double product = (double) multiplyMethod.invoke(null, 6.0, 9.0);
 			System.out.println(product);
 
+			// Using Reflection to get the custom annotation 'Field' property
+			java.lang.reflect.Field field = reflectedClass.getDeclaredField("name");
+			Field fieldAnnotation = field.getAnnotation(Field.class);
+			if (fieldAnnotation != null) {
+				System.out.println("Field Annotation Description = " + fieldAnnotation.description());
+			}
+			
+			Configurable annotation = reflectedClass.getAnnotation(Configurable.class);
+			if (annotation != null) {
+				System.out.println(annotation.toString());
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
