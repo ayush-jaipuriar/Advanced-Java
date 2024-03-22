@@ -74,7 +74,7 @@ public class App {
 			
 			Configurable annotation = reflectedClass.getAnnotation(Configurable.class);
 			if (annotation != null) {
-				System.out.println(annotation.toString());
+				System.out.println("Class annotation : " + annotation.toString());
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
