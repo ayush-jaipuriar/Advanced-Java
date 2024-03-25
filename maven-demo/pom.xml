@@ -9,6 +9,14 @@
 	<artifactId>maven-demo</artifactId>
 	<version>1.0-SNAPSHOT</version>
 
+	<configuration>
+	  <archive>
+	    <manifest>
+		<mainClass>>com.drarc.advancedjava.App</mainClass>
+	    </manifest>
+	  </archive>
+	</configuration>
+
 	<name>maven-demo</name>
 	<!-- FIXME change it to the project's website -->
 	<url>http://www.example.com</url>
