@@ -1,32 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!-- Root element of the Maven POM file -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
+	<!-- Project identification -->
 	<groupId>com.drarc.advancedjava</groupId>
 	<artifactId>maven-demo</artifactId>
 	<version>1.0-SNAPSHOT</version>
 
+	<!-- Configuration for the main class to be executed -->
 	<configuration>
-	  <archive>
+	 <archive>
 	    <manifest>
-		<mainClass>>com.drarc.advancedjava.App</mainClass>
+		<mainClass>com.drarc.advancedjava.App</mainClass>
 	    </manifest>
-	  </archive>
+	 </archive>
 	</configuration>
 
+	<!-- Project metadata -->
 	<name>maven-demo</name>
-	<!-- FIXME change it to the project's website -->
 	<url>http://www.example.com</url>
 
+	<!-- Project properties -->
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>1.7</maven.compiler.target>
 	</properties>
 
+	<!-- Dependencies required for the project -->
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -35,54 +40,55 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<!-- MySQL Connector/J for database connectivity -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.33</version>
 		</dependency>
-
-
 	</dependencies>
 
+	<!-- Build configuration -->
 	<build>
-		<pluginManagement><!-- lock down plugins versions to avoid using Maven
-			defaults (may be moved to parent pom) -->
+		<pluginManagement>
+			<!-- Plugin versions are locked to avoid using Maven defaults -->
 			<plugins>
-				<!-- clean lifecycle, see
-				https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
+				<!-- Plugins for cleaning the project -->
 				<plugin>
 					<artifactId>maven-clean-plugin</artifactId>
 					<version>3.1.0</version>
 				</plugin>
-				<!-- default lifecycle, jar packaging: see
-				https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
+				<!-- Plugins for managing resources -->
 				<plugin>
 					<artifactId>maven-resources-plugin</artifactId>
 					<version>3.0.2</version>
 				</plugin>
+				<!-- Plugins for compiling the project -->
 				<plugin>
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>3.8.0</version>
 				</plugin>
+				<!-- Plugins for running tests -->
 				<plugin>
 					<artifactId>maven-surefire-plugin</artifactId>
 					<version>2.22.1</version>
 				</plugin>
+				<!-- Plugins for packaging the project -->
 				<plugin>
 					<artifactId>maven-jar-plugin</artifactId>
 					<version>3.0.2</version>
 				</plugin>
+				<!-- Plugins for installing the project -->
 				<plugin>
 					<artifactId>maven-install-plugin</artifactId>
 					<version>2.5.2</version>
 				</plugin>
+				<!-- Plugins for deploying the project -->
 				<plugin>
 					<artifactId>maven-deploy-plugin</artifactId>
 					<version>2.8.2</version>
 				</plugin>
-				<!-- site lifecycle, see
-				https://maven.apache.org/ref/current/maven-core/lifecycles.html#site_Lifecycle -->
+				<!-- Plugins for generating project information -->
 				<plugin>
 					<artifactId>maven-site-plugin</artifactId>
 					<version>3.7.1</version>
